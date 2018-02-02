@@ -11,6 +11,6 @@ import retrofit2.http.Query;
  */
 
 public interface PhisixApi {
-    @GET("/api/get")
-    Call<List<Course>> getData(@Query("name") String resourceName, @Query("num") int count);
+    @GET("/stocks.json/")
+    Call<Course> getData();
 }

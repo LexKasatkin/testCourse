@@ -16,10 +16,10 @@ import java.util.List;
 
 public class RVAdapterCourse extends RecyclerView.Adapter<RVAdapterCourse.ViewHolder> {
 
-    private List<Course> courses;
+    private List<Stock> stocks;
 
-    public RVAdapterCourse(List<Course> courses) {
-        this.courses= courses;
+    public RVAdapterCourse(List<Stock> stocks) {
+        this.stocks= stocks;
     }
 
     @Override
@@ -30,30 +30,29 @@ public class RVAdapterCourse extends RecyclerView.Adapter<RVAdapterCourse.ViewHo
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Course post = courses.get(position);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            holder.post.setText(Html.fromHtml(post.getElementPureHtml(), Html.FROM_HTML_MODE_LEGACY));
-        } else {
-            holder.post.setText(Html.fromHtml(post.getElementPureHtml()));
-        }
-        holder.site.setText(post.getSite());
+        Stock stock = stocks.get(position);
+        holder.tvName.setText("Название валюты: "+stock.getName());
+        holder.tvVolume.setText("Цена "+String.valueOf(stock.getVolume()));
+        holder.tvAmount.setText("Количество "+String.format("%.2f", stock.getPrice().getAmount()));
     }
 
     @Override
     public int getItemCount() {
-        if (courses == null)
+        if (stocks == null)
             return 0;
-        return courses.size();
+        return stocks.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        TextView post;
-        TextView site;
+        TextView tvName;
+        TextView tvAmount;
+        TextView tvVolume;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            post = (TextView) itemView.findViewById(R.id.postitem_post);
-            site = (TextView) itemView.findViewById(R.id.postitem_site);
+            tvName =  itemView.findViewById(R.id.tvName);
+            tvAmount =  itemView.findViewById(R.id.tvAmount);
+            tvVolume =  itemView.findViewById(R.id.tvVolume);
         }
     }
 }
