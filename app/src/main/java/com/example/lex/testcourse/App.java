@@ -22,8 +22,6 @@ public class App extends Application {
 
 
 
-
-
     }
 
     public static PhisixApi getApi() {
