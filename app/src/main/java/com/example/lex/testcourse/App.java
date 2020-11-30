@@ -19,8 +19,6 @@ public class App extends Application {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         phisixApi = retrofit.create(PhisixApi.class);
-//dd
-//
 
 
     }
