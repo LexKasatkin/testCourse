@@ -18,6 +18,7 @@ public class App extends Application {
                 .baseUrl("http://www.phisix-api3.appspot.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+
 //        phisixApi = retrofit.create(PhisixApi.class);
 
 
