@@ -17,7 +17,7 @@ public class Course implements Parcelable
 
     @SerializedName("stock")
     @Expose
-//    @Valid
+    @Valid
     private List<Stock> stock = new ArrayList<Stock>();
     @SerializedName("as_of")
     @Expose
