@@ -20,7 +20,6 @@ public class App extends Application {
                 .build();
         phisixApi = retrofit.create(PhisixApi.class);
 
-
     }
 
     public static PhisixApi getApi() {
